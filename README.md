@@ -30,7 +30,7 @@
 - [Hiding evidence](#hiding-evidence)
 - [What to always check](#what-to-always-check)
 
-### Scanning network
+### <span style="color:#39FF14">Scanning network</span>
 
 1. scan network for hosts
 ```sh
