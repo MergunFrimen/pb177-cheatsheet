@@ -19,11 +19,16 @@
 
 - [Scanning network](#scanning-network)
 - [Searching vulnerabilities](#searching-vulnerabilities)
-- [Exploiting vulnerability](#exploiting-vulnerability)
+- [Exploiting vulnerability](#exploiting-vulnerability) 
 - [Password guessing](#password-guessing)
 - [Password cracking](#password-cracking)
 - [Command injection](#command-injection)
 - [Lateral movement](#lateral-movement)
+- [Web](#web)
+- [Forced browsing](#forced-browsing)
+- [Password guessing web forms](#password-guessing-web-forms)
+- [SQL injection](#sql-injection)
+- [Hiding evidence](#hiding-evidence)
 - [What to always check](#what-to-always-check)
 
 ### Scanning network
@@ -210,8 +215,6 @@ curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' --data-raw 'ui
 ```
 
 4. or use sqlmap
-```sh
-```
 
 ### Hiding evidence
 
