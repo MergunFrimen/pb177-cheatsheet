@@ -1,4 +1,4 @@
-# Docker image image-history
+# Lab podman image history
 
 ## What can potentially leak
 
