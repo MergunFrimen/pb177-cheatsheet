@@ -1,9 +1,9 @@
 # PB177 Cheatsheet
 
 - [All tools](./tools.md)
-- [Labs](./labs/README.md)
-- [Lab image history](./image-history/README.md)
-- [Podman cheatsheet](./podman/README.md)
+- [Labs](./labs.md)
+- [Lab image history](./images.md)
+- [Podman cheatsheet](./podman.md)
 
 ## Useful websites
 - vulnerability search

