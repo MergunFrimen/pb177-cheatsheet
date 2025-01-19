@@ -1,10 +1,9 @@
 # PB177 Cheatsheet
 
-## [Labs](./labs/README.md)
-
-## [Lab image history](./image-history/README.md)
-
-## [Podman cheatsheet](./podman/README.md)
+- [All tools](./tools.md)
+- [Labs](./labs/README.md)
+- [Lab image history](./image-history/README.md)
+- [Podman cheatsheet](./podman/README.md)
 
 ## Useful websites
 - vulnerability search
@@ -284,5 +283,3 @@ cat /var/log/syslog
 ls /
 cat /setup.sh
 ```
-
-## [All tools](./tools.md)
