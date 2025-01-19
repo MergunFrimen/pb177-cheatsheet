@@ -1,4 +1,4 @@
-# Docker image history
+# Docker image histories
 
 ## What can potentially leak
 
@@ -18,32 +18,32 @@
 
 ## Lab 1
 
-- [dns](./dns.json)
-- [nginx](./nginx.json)
-- [relay](./relay.json)
-- [samba](./samba.json)
-- [ssh](./ssh.json)
+- [dns](./histories/dns.json)
+- [nginx](./histories/nginx.json)
+- [relay](./histories/relay.json)
+- [samba](./histories/samba.json)
+- [ssh](./histories/ssh.json)
 
 ## Lab 2
 
-- [server](./server.json)
+- [server](./histories/server.json)
 
 ## Lab 3
 
-- [server3](./server3.json)
+- [server3](./histories/server3.json)
 
 ## Lab 4
 
-- [desktop](./desktop.json)
-- [dns](./dns.json)
-- [jumphost](./jumphost.json)
-- [server5](./server5.json)
-- [ssh](./ssh.json)
+- [desktop](./histories/desktop.json)
+- [dns](./histories/dns.json)
+- [jumphost](./histories/jumphost.json)
+- [server5](./histories/server5.json)
+- [ssh](./histories/ssh.json)
 
 ## Lab 5
 
-- [dvwa](./dvwa.json)
+- [dvwa](./histories/dvwa.json)
 
 ## Lab 6
 
-- [dvwa](./dvwa.json)
+- [dvwa](./histories/dvwa.json)
