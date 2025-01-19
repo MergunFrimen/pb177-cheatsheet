@@ -1,0 +1,117 @@
+# docker.io/library is used for compatibility with podman
+
+version: "3.8"
+services:
+
+  attacker:
+    container_name: attacker
+    hostname: attacker
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/kali/kali:main
+    # TODO: add to Dockerfile:
+    # scapy for sending packets with a spoofed IP:
+    #   pip3 install scapy
+    restart: on-failure
+    volumes:
+      - ./student_home/root:/root
+      - user-data:/home
+      - ./student_home/xuser/shared:/home/xuser/shared
+    tty: true
+    cap_add:
+      - NET_ADMIN # for capturing packages in promiscuous mode
+      - NET_RAW # for raw sockets e.g. used for the boreas alive detection
+      - SYS_ADMIN # for ability to mount volumes
+      - DAC_READ_SEARCH # for ability to mount volmues
+    ports:
+      - "127.0.0.1:14000:13389" # only local access
+      #- "14000:13389" # DEBUG ONLY: remote access
+    networks:
+      vnet:
+        ipv4_address: 10.0.0.2
+
+  host1:
+    container_name: intranet.org1
+    hostname: intranet.org1
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/ssh/ssh:main
+    environment: 
+      SSH_PORT: 2234
+    restart: on-failure
+    networks:
+      vnet:
+        ipv4_address: 10.0.33.50
+
+  host2:
+    container_name: relay.org1
+    hostname: relay.org1
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/relay/relay:main
+    restart: on-failure
+    tty: true
+    networks:
+      vnet:
+        ipv4_address: 10.0.33.60
+
+  host3:
+    container_name: web.org1
+    hostname: web.org1
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/ssh/ssh:main
+    environment: 
+      SSH_PORT: 2234
+    restart: on-failure
+    networks:
+      vnet:
+        ipv4_address: 10.0.33.70
+
+  host4:
+    container_name: storage.org2
+    hostname: storage.org2
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/samba/samba:main
+    restart: on-failure
+    tty: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW 
+    networks:
+      vnet:
+        ipv4_address: 10.0.66.100
+
+  host5:
+    container_name: dns.org2
+    hostname: dns.org2
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/dns/dns:main
+    restart: on-failure
+    tty: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW 
+    networks:
+      vnet:
+        ipv4_address: 10.0.66.150
+
+  host6:
+    container_name: mail.org2
+    hostname: mail.org2
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/ssh/ssh:main
+    environment: 
+      SSH_PORT: 2234
+    restart: on-failure
+    networks:
+      vnet:
+        ipv4_address: 10.0.66.200
+
+  nginx:
+    container_name: web.org2
+    hostname: web.org2
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/nginx/nginx:main
+    restart: on-failure
+    networks:
+      vnet:
+        ipv4_address: 10.0.66.201
+
+networks:
+  vnet:
+    name: vnet
+    ipam:
+      config:
+        - subnet: 10.0.0.0/16
+
+volumes:
+  user-data:

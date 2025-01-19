@@ -1,0 +1,101 @@
+# docker.io/library is used for compatibility with podman
+
+services:
+
+  attacker:
+    container_name: attacker
+    hostname: attacker
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/kali/kali:main
+    restart: on-failure
+    volumes:
+      - ./student_home/root:/root
+      - user-data:/home
+      - ./student_home/xuser/shared:/home/xuser/shared
+    tty: true
+    cap_add:
+      - NET_ADMIN # for capturing packages in promiscuous mode
+      - NET_RAW # for raw sockets e.g. used for the boreas alive detection
+      - SYS_ADMIN # for ability to mount volumes
+      - DAC_READ_SEARCH # for ability to mount volmues
+    ports:
+      - "127.0.0.1:14000:13389" # only local access
+      # - "14000:13389" # DEBUG ONLY: remote access
+    networks:
+      vnet:
+        ipv4_address: 10.0.0.2
+
+  server:
+    container_name: server
+    hostname: server
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/server5/server5:main
+    restart: on-failure
+    tty: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    networks:
+      vnet:
+        ipv4_address: 10.0.128.2
+
+  desktop:
+    container_name: desktop
+    hostname: desktop
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/desktop/desktop:main
+    restart: on-failure
+    tty: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    networks:
+      vnet:
+        ipv4_address: 10.0.129.2
+
+  dns:
+    container_name: dns
+    hostname: dns
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/dns/dns:main
+    restart: on-failure
+    tty: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW 
+    networks:
+      vnet:
+        ipv4_address: 10.0.128.3
+  
+  target:
+    container_name: target
+    hostname: target
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/ssh/ssh:main
+    environment: 
+      SSH_PORT: 22
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW 
+    restart: on-failure
+    networks:
+      vnet:
+        ipv4_address: 10.0.33.50
+
+  jump:
+    container_name: jump
+    hostname: jump
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/jumphost/jumphost:main
+    restart: on-failure
+    tty: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    networks:
+      vnet:
+        ipv4_address: 10.0.10.22
+
+networks:
+  vnet:
+    name: vnet
+    ipam:
+      config:
+        - subnet: 10.0.0.0/16
+
+volumes:
+  user-data:

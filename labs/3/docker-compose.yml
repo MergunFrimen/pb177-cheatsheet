@@ -1,0 +1,49 @@
+# docker.io/library is used for compatibility with podman
+
+services:
+
+  attacker:
+    container_name: attacker
+    hostname: attacker
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/kali/kali:main
+    restart: on-failure
+    volumes:
+      - ./student_home/root:/root
+      - user-data:/home
+      - ./student_home/xuser/shared:/home/xuser/shared
+    tty: true
+    cap_add:
+      - NET_ADMIN # for capturing packages in promiscuous mode
+      - NET_RAW # for raw sockets e.g. used for the boreas alive detection
+      - SYS_ADMIN # for ability to mount volumes
+      - DAC_READ_SEARCH # for ability to mount volmues
+    ports:
+      - "127.0.0.1:14000:13389" # only local access
+      #- "14000:13389" # DEBUG ONLY: remote access
+    networks:
+      vnet:
+        ipv4_address: 10.0.0.2
+
+  server:
+    container_name: server3
+    hostname: server3
+    image: gitlab.fi.muni.cz:5050/cybersec/infra/images/server3/server3:main
+    restart: on-failure
+    tty: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    networks:
+      vnet:
+        ipv4_address: 10.0.33.110
+
+networks:
+  vnet:
+    name: vnet
+    ipam:
+      config:
+        - subnet: 10.0.0.0/16
+
+volumes:
+  user-data:
+  db:
