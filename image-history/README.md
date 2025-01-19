@@ -1,5 +1,7 @@
 # Docker image history
 
+## What can potentially leak
+
 - installed packages
 - run scrips
 - user management
