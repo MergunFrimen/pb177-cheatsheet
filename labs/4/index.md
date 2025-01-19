@@ -1,6 +1,21 @@
 # PB177 – Resource development, intial access, execution, discovery, lateral movement, collection, command and control, exfiltration, impact
 
-[[_TOC_]]
+## Table of Contents
+- [Learning objectives](#learning-objectives)
+- [Start the sandbox](#start-the-sandbox)
+- [Sandbox Topology](#sandbox-topology)
+- [Attack](#attack)
+  - [Task: Brute Force: Password Guessing](#task-brute-force-password-guessing)
+  - [Task: Account Discovery](#task-account-discovery)
+  - [Task: Log Enumeration](#task-log-enumeration)
+  - [Task: Remote Services and Valid Accounts](#task-remote-services-and-valid-accounts)
+  - [Task: Create, deploy and use a reverse shell](#task-create-deploy-and-use-a-reverse-shell)
+  - [Task: Search and collect sensitive documents](#task-search-and-collect-sensitive-documents)
+  - [Task: Exfiltration Over C2 Channel](#task-exfiltration-over-c2-channel)
+  - [Task: Network Denial of Service: Reflection Amplification](#task-network-denial-of-service-reflection-amplification)
+- [Traffic analysis](#traffic-analysis)
+  - [Task: Inspect C2 traffic](#task-inspect-c2-traffic)
+- [End of the lab](#end-of-the-lab)
 
 ## Learning objectives
 

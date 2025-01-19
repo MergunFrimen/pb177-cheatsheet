@@ -1,6 +1,19 @@
 # PB177 – Web Application Attacks – Part II
 
-[[_TOC_]]
+## Table of Contents
+- [Learning Objectives](#learning-objectives)
+- [Sandbox](#sandbox)
+- [Start the Sandbox](#start-the-sandbox)
+- [Web Attacks](#web-attacks)
+  - [Task: tshark HTTP Traffic Analysis](#task-tshark-http-traffic-analysis)
+  - [Task: Forced Browsing Attack](#task-forced-browsing-attack)
+  - [Task: Brute Force Using wfuzz and ffuf](#task-brute-force-using-wfuzz-and-ffuf)
+  - [Task: Unrestricted File Upload Attack](#task-unrestricted-file-upload-attack)
+  - [Task: Cross-Site Scripting Attacks](#task-cross-site-scripting-attacks)
+  - [Task: Cross-Site Request Forgery Attack](#task-cross-site-request-forgery-attack)
+  - [Task: Man-in-the-Middle Attack](#task-man-in-the-middle-attack)
+- [Feedback on Lab Sessions](#feedback-on-lab-sessions)
+- [End of the Lab](#end-of-the-lab)
 
 ## Learning Objectives
 

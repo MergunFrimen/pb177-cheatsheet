@@ -1,6 +1,17 @@
 # PB177 – Web Application Attacks – Part I
 
-[[_TOC_]]
+## Table of Contents
+- [Learning Objectives](#learning-objectives)
+- [Sandbox](#sandbox)
+- [Start the Sandbox](#start-the-sandbox)
+- [Web Attacks](#web-attacks)
+  - [Task: Command Injection](#task-command-injection)
+  - [Task: Brute Force Using curl and wfuzz](#task-brute-force-using-curl-and-wfuzz)
+  - [Task: Brute Force Using hydra](#task-brute-force-using-hydra)
+  - [Task: SQL Injection](#task-sql-injection)
+  - [Task: SQL Injection Using sqlmap](#task-sql-injection-using-sqlmap)
+- [Switching to higher levels of DVWA security](#switching-to-higher-levels-of-dvwa-security)
+- [End of the Lab](#end-of-the-lab)
 
 ## Learning Objectives
 

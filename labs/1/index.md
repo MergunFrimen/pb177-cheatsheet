@@ -1,7 +1,24 @@
 # PB177 – Introduction to Podman, reconnaissance
 
-[[_TOC_]]
-
+## Table of Contents
+- [Learning objectives](#learning-objectives)
+- [Sandbox building blocks – containers](#sandbox-building-blocks--containers)
+- [Start the sandbox](#start-the-sandbox)
+  - [Notes](#notes)
+- [Nmap](#nmap)
+  - [Task: Scanning IP Blocks](#task-scanning-ip-blocks)
+  - [Task: Scanning for running software and version numbers](#task-scanning-for-running-software-and-version-numbers)
+  - [Task: Gather Victim Network Information: DNS](#task-gather-victim-network-information-dns)
+  - [Task: Gather Victim Org Information](#task-gather-victim-org-information)
+  - [Task: Wordlist Scanning](#task-wordlist-scanning)
+- [dirb](#dirb)
+  - [Task: Wordlist Scanning](#task-wordlist-scanning-1)
+- [Generative AI](#generative-ai)
+  - [Task: Phishing for Information](#task-phishing-for-information)
+- [Web browser](#web-browser)
+  - [Task: Search Open Technical Databases: WHOIS](#task-search-open-technical-databases-whois)
+  - [Task: Search Victim-Owned Websites](#task-search-victim-owned-websites)
+- [End of the lab](#end-of-the-lab)
 ## Learning objectives
 
 At the end of this lab session, you will be able to:

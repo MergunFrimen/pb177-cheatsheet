@@ -1,7 +1,17 @@
 # PB177 – Initial access, execution
 
-[[_TOC_]]
-
+## Table of Contents
+- [Learning objectives](#learning-objectives)
+- [Start the sandbox](#start-the-sandbox)
+- [Metasploit](#metasploit)
+  - [Task: Exploit Public-Facing Application](#task-exploit-public-facing-application)
+- [Wireshark](#wireshark)
+  - [Prerequisite: Enable packet capture for non-root users (kali) and start Wireshark](#prerequisite-enable-packet-capture-for-non-root-users-kali-and-start-wireshark)
+  - [Task: Capture traffic of an exploit](#task-capture-traffic-of-an-exploit)
+  - [Task: Search for traffic with exploit](#task-search-for-traffic-with-exploit)
+- [Task: Detection and mitigation of the exploit](#task-detection-and-mitigation-of-the-exploit)
+- [Task: Use Meterpreter for execution](#task-use-meterpreter-for-execution)
+- [End of the lab](#end-of-the-lab)
 ## Learning objectives
 
 At the end of this lab session, you will be able to:

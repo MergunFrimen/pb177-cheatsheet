@@ -1,6 +1,21 @@
 # PB177 – Persistence, privilege escalation, defense evasion, credential access
 
-[[_TOC_]]
+## Table of Contents
+- [Learning objectives](#learning-objectives)
+- [Start the sandbox](#start-the-sandbox)
+- [Attack](#attack)
+  - [Task: Brute Force: Password Guessing](#task-brute-force-password-guessing)
+  - [Task: Exploitation for Privilege Escalation](#task-exploitation-for-privilege-escalation)
+  - [Task: Create Account: Local Account](#task-create-account-local-account)
+  - [Task: Account Manipulation: SSH Authorized Keys](#task-account-manipulation-ssh-authorized-keys)
+  - [Task: OS Credential Dumping: /etc/passwd and /etc/shadow and Brute Force: Password Cracking](#task-os-credential-dumping-etcpasswd-and-etcshadow-and-brute-force-password-cracking)
+  - [Task: Scheduled Task/Job: Cron](#task-scheduled-taskjob-cron)
+  - [Task: Impair Defenses: Impair Command History Logging](#task-impair-defenses-impair-command-history-logging)
+  - [Task: Indicator Removal: Clear Linux or Mac System Logs](#task-indicator-removal-clear-linux-or-mac-system-logs)
+- [Detection and mitigation](#detection-and-mitigation)
+  - [Fail2ban](#fail2ban)
+  - [Searching in system logs](#searching-in-system-logs)
+- [End of the lab](#end-of-the-lab)
 
 ## Learning objectives
 
