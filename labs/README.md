@@ -1,25 +1,68 @@
-# PB177 Labs
+# [Lab 1](./1/index.md)
+- nmap scanning
+- dirb scanning
+- phishing with AI
+- whois
 
-## Important notice
+# [Lab 2](./2/index.md)
+- metasploit
+- wireshark
+- exploit mitigation
+- meterpreter
 
-In this course, you are practicing various cyberattacks within a controlled sandbox environment.\
-You are **fully responsible** for any actions taken **outside of this environment**.
+# [Lab 3](./3/index.md)
+- password guessing
+- priviledge escalation
+- linpeas
+- creating superuser account
+- ssh server config
+- ssh keys
+- credential dumping
+- password cracking
+- cron job reverse shell
+- turn off command history logging
+- clearing logs
+- attack detection
+- attack mitigation
 
-Unauthorized activities conducted outside of this environment are strictly prohibited and might have legal consequences.
+# [Lab 4](./4/index.md)
+- password guessing
+- account discovery
+- log enumeration
+- meterpreter reverse shell
+- exfiltration of sensitive documents
+- reflection attack
+- packet manipulation
+    - scapy
+- traffic analysis
+    - tcpdump
+    - wireshark
 
-## Labs
+# [Lab 5](./5/index.md)
+- command injection
+- brute forcing authentication
+    - wfuzz
+    - ffuf
+    - hydra
+- sql injection
+    - manual
+    - sqlmap
+- password cracking
 
-* [1 - Introduction to Podman, reconnaissance](/1/index.md)
-* [2 - Initial access and execution](/2/index.md)
-* [3 - Persistence, privilege escalation, defense evasion, credential access](/3/index.md)
-* [4 - Discovery, lateral movement, collection, command and control, exfiltration, impact](/4/index.md)
-* [5 - Web application attacks - part I](/5/index.md)
-* [6 - Web application attacks - part II](/6/index.md)
-
-## Installation of Podman at own hardware
-
-Recommended HW configuration:
-* 6 GB of RAM
-* SSD drive with about 8 GB free space 
-
-Install Podman Desktop from the [official website](https://podman-desktop.io/downloads).
+# [Lab 6](./6/index.md)
+- traffic analysis
+    - tshark
+- command injection
+- forced browsing
+- brute forcing authentication
+    - wfuzz
+    - ffuf
+    - hydra
+- unrestricted file upload
+- web shell attack
+- cross site scripting attack
+    - reflected
+    - stored
+    - dom based
+- cross site request forgery attack
+- man in the middle attack
