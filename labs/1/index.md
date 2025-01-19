@@ -1,6 +1,7 @@
 # PB177 – Introduction to Podman, reconnaissance
 
 ## Table of Contents
+
 - [Learning objectives](#learning-objectives)
 - [Sandbox building blocks – containers](#sandbox-building-blocks--containers)
 - [Start the sandbox](#start-the-sandbox)
@@ -19,6 +20,7 @@
   - [Task: Search Open Technical Databases: WHOIS](#task-search-open-technical-databases-whois)
   - [Task: Search Victim-Owned Websites](#task-search-victim-owned-websites)
 - [End of the lab](#end-of-the-lab)
+
 ## Learning objectives
 
 At the end of this lab session, you will be able to:

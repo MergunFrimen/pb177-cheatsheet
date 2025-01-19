@@ -1,6 +1,7 @@
 # PB177 – Resource development, intial access, execution, discovery, lateral movement, collection, command and control, exfiltration, impact
 
 ## Table of Contents
+
 - [Learning objectives](#learning-objectives)
 - [Start the sandbox](#start-the-sandbox)
 - [Sandbox Topology](#sandbox-topology)

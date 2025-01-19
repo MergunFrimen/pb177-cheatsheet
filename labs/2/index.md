@@ -1,6 +1,7 @@
 # PB177 – Initial access, execution
 
 ## Table of Contents
+
 - [Learning objectives](#learning-objectives)
 - [Start the sandbox](#start-the-sandbox)
 - [Metasploit](#metasploit)
@@ -12,6 +13,7 @@
 - [Task: Detection and mitigation of the exploit](#task-detection-and-mitigation-of-the-exploit)
 - [Task: Use Meterpreter for execution](#task-use-meterpreter-for-execution)
 - [End of the lab](#end-of-the-lab)
+
 ## Learning objectives
 
 At the end of this lab session, you will be able to:

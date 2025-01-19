@@ -1,6 +1,7 @@
 # PB177 – Persistence, privilege escalation, defense evasion, credential access
 
 ## Table of Contents
+
 - [Learning objectives](#learning-objectives)
 - [Start the sandbox](#start-the-sandbox)
 - [Attack](#attack)
