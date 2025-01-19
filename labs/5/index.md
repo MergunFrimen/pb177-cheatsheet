@@ -37,7 +37,7 @@ On this page, you will find a simple input box meant for pinging a device (use t
 * Craft an input to display the contents of the /etc/passwd file.
 * Identify the User ID of the user with the username **games**.
 
-<details>
+<details open>
 <summary>
 Source code and chaining commands
 </summary>
@@ -52,7 +52,7 @@ root@attacker:~# ping -c 1 10.0.0.254 && echo "Host is ONLINE" || echo "Host is 
 ```
 </details>
 
-<details>
+<details open>
 <summary>
 What is the format of /etc/passwd file?
 </summary>
@@ -60,7 +60,7 @@ What is the format of /etc/passwd file?
  * The format of /etc/passwd is: **`Username:Password:UserID:GroupID...`**
 </details>
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -120,7 +120,7 @@ In this task, you will brute force web application authentication. These attacks
 * Prepare a dictionary file on your attack machine. Use the [wordlist.txt](./wordlist.txt) to log in to the website.
 * Use the [wfuzz](https://wfuzz.readthedocs.io/en/latest/) tool to brute force the web login using the wordlist.
 
-<details>
+<details open>
 <summary>
 What is the HTTP request to login to the web site?
 </summary>
@@ -169,7 +169,7 @@ root@attacker:~# curl -s -v 'http://10.0.0.10:80/vulnerabilities/brute/?username
 ```
 </details>
 
-<details>
+<details open>
 <summary>
 Solution for performing brute force attack with wfuzz
 </summary>
@@ -263,7 +263,7 @@ ID           Response   Lines    Word       Chars       Payload
 </details>
 
 
-<details>
+<details open>
 <summary>
 Bonus task - performing brute force attack with ffuf
 </summary>
@@ -341,7 +341,7 @@ Focus on these key points:
 * How to provide a file containing the passwords to be tested during the attack.
 * The required parameters for running the command with the http-get-form type.
 
-<details>
+<details open>
 <summary>
 Analyze the server response and how the server responds when an incorrect password is used.
 </summary>
@@ -366,7 +366,7 @@ Username and/or password incorrect.
 * The web server returns a unique error message **Username and/or password incorrect.**
 </details>
 
-<details>
+<details open>
 <summary>
 Specify the success or failure condition using the http-get-form parameters.
 </summary>
@@ -381,7 +381,7 @@ Specify the success or failure condition using the http-get-form parameters.
 
 </details>
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -438,7 +438,7 @@ The DVWA source code uses the following SQL query to read first and last names.
 SELECT first_name, last_name FROM users WHERE user_id = '$id';
 ```
 
-<details>
+<details open>
 <summary>
 Show first and last names of users with IDs 1 to 5.
 </summary>
@@ -458,7 +458,7 @@ Surname: admin
 ```
 </details>
 
-<details>
+<details open>
 <summary>
 Show all first and last names using a single query.
 </summary>
@@ -491,7 +491,7 @@ Surname: Smith
  * Propose and test multiple always-true SQL statements to list all first and last names in the database (e.g, `' OR 1=1 -- COMMENT`).
 </details>
 
-<details>
+<details open>
 <summary>
 Extract the user names and passwords stored in the database.
 </summary>
@@ -522,7 +522,7 @@ Surname: 5f4dcc3b5aa765d61d8327deb882cf99
 ```
 </details>
 
-<details>
+<details open>
 <summary>
 Crack the hashes to obtain the passwords in plaintext.
 </summary>
@@ -585,7 +585,7 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2024-11-16 19:03:
 ```
 </details>
 
-<details>
+<details open>
 <summary>
 Retrieve metadata about the database, server, and user environment.
 </summary>
@@ -611,7 +611,7 @@ In this task, you will perform a similar process to the previous task but using 
 
 If you have never used sqlmap before, a [tutorial](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/SQLmap.md) is available to get you familiar. You can also visit sqlmap's official [website](https://sqlmap.org/) for more comprehensive documentation.
 
-<details>
+<details open>
 <summary>
 Test SQL injection on GET parameter 'id'.
 </summary>
@@ -660,7 +660,7 @@ back-end DBMS: MySQL >= 5.0 (MariaDB fork)
  ```
 </details>
 
-<details>
+<details open>
 <summary>
 Retrieve current database name.
 </summary>
@@ -676,7 +676,7 @@ current database: 'dvwa'
  ```
 </details>
 
-<details>
+<details open>
 <summary>
 Enumerate 'dvwa' database tables.
 </summary>
@@ -697,7 +697,7 @@ Database: dvwa
  ```
 </details>
 
-<details>
+<details open>
 <summary>
 Fetch columns for table 'users' in database 'dvwa'.
 </summary>
@@ -726,7 +726,7 @@ Table: users
  ```
 </details>
 
-<details>
+<details open>
 <summary>
 Dump 'users' database table entries and obtain the passwords in plaintext.
 </summary>
@@ -774,7 +774,7 @@ Table: users
  ```
 </details>
 
-<details>
+<details open>
 <summary>
 Execute SQL queries on a vulnerable database.
 </summary>
@@ -824,25 +824,25 @@ So far, you have attacked DVWA set to the **low** security level. If you finish 
 
 To solve the tasks, use the Firefox browser with the DVWA security level set to **medium**. To solve the tasks using command-line tools, you must properly set the security cookie  (`security=medium`) in each tool individually.
 
-<details>
+<details open>
 <summary>Setting cookies in curl.</summary>
 
  * `-H 'Cookie: security=medium'`
 </details>
 
-<details>
+<details open>
 <summary>Setting cookies in wfuzz and ffuf.</summary>
 
  * `-b security=medium`
 </details>
 
-<details>
+<details open>
 <summary>Setting cookies in hydra.</summary>
 
  * `:H=Cookie: security=medium:`
 </details>
 
-<details>
+<details open>
 <summary>Setting cookies, flushing session files, and refreshing queries in sqlmap.</summary>
 
  * `--cookie="security=medium"`

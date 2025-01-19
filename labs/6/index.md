@@ -32,7 +32,7 @@ In this lab, you will use the [Damn Vulnerable Web Application (DVWA)](https://g
 
 Analyze HTTP [GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET) and [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) requests to DVWA application.
 
-<details>
+<details open>
 <summary>
 HTTP GET request to performe Brute Force attack in DVWA
 </summary>
@@ -102,7 +102,7 @@ Line-based text data: text/html (110 lines)
  ```
 </details>
 
-<details>
+<details open>
 <summary>
 HTTP POST request to performe Command Injection attack in DVWA
 </summary>
@@ -183,7 +183,7 @@ Line-based text data: text/html (128 lines)
 
 [Forced browsing](https://owasp.org/www-community/attacks/Forced_browsing) is an attack where the aim is to enumerate and access resources that are not referenced by the application, but are still accessible. This attack is performed manually when the application index directories and pages are based on predictable values, or using automated tools for common files and directory names.
 
-<details>
+<details open>
 <summary>
 Forced browsing attack using wfuzz
 </summary>
@@ -222,7 +222,7 @@ ID           C.Time       Response   Lines      Word     Chars       Server     
 </details>
 
 
-<details>
+<details open>
 <summary>
 Find the login page for the DVWA application.
 </summary>
@@ -258,7 +258,7 @@ ID           C.Time       Response   Lines      Word     Chars       Server     
 </details>
 
 
-<details>
+<details open>
 <summary>
 Bonus Task: Discover the DVWA login page using ffuf.
 </summary>
@@ -356,7 +356,7 @@ tests                   [Status: 301, Size: 306, Words: 20, Lines: 10, Duration:
 
 In this task, you will perform a brute force attack on the DVWA login page using the HTTP POST method to send data to the web server.
 
-<details>
+<details open>
 <summary>
 Brute force attack using wfuzz
 </summary>
@@ -465,7 +465,7 @@ ID           C.Time       Response   Lines      Word     Chars       Server     
 ```
 </details>
 
-<details>
+<details open>
 <summary>
 Brute force attack using ffuf
 </summary>
@@ -560,7 +560,7 @@ ________________________________________________
 ```
 </details>
 
-<details>
+<details open>
 <summary>
 Bonus Task: Brute force attack using hydra.
 </summary>
@@ -584,7 +584,7 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2024-11-28 06:39:
 
 Unrestricted file upload [[PortSwigger](https://portswigger.net/web-security/file-upload), [OWASP](https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload)] attack poses a significant risk to web applications, allowing an attacker to deliver malicious code to a target system as the first step. The potential consequences include complete system takeover, file system overload, backend system attacks, or website defacement.
 
-<details>
+<details open>
 <summary>
 Unrestricted file upload
 </summary>
@@ -633,7 +633,7 @@ password
 ```
 </details>
 
-<details>
+<details open>
 <summary>
 Web shell attack
 </summary>
@@ -692,7 +692,7 @@ www-data
 
 There are three primary types of Cross-Site Scripting (XSS) attacks [[PortSwigger](https://portswigger.net/web-security/cross-site-scripting), [OWASP](https://owasp.org/www-community/attacks/xss/)]. **Reflected XSS** occurs when the malicious script is embedded in the current HTTP request and is reflected back to the user without proper sanitization. **Stored XSS** involves the injection of a malicious script into a website's database, which is then served to users when they access affected pages. Finally, **DOM-based XSS** arises from vulnerabilities in client-side code, where the browser processes the malicious script directly, independent of the server-side logic.
 
-<details>
+<details open>
 <summary>
 Reflected XSS Attack
 </summary>
@@ -787,7 +787,7 @@ HTML Form URL Encoded: application/x-www-form-urlencoded
 
 </details>
 
-<details>
+<details open>
 <summary>
 Stored XSS Attack
 </summary>
@@ -844,7 +844,7 @@ Decoded POST data: {'cookies': ['security=low; PHPSESSID=f820db33450a96e31a3139f
 
 </details>
 
-<details>
+<details open>
 <summary>
 DOM-based XSS Attack
 </summary>
@@ -892,7 +892,7 @@ http://10.0.0.10/vulnerabilities/xss_d/?default=French<script>alert(navigator.us
 
 Cross-Site Request Forgery (CSRF) [[PortSwigger](https://portswigger.net/web-security/csrf), [OWASP](https://owasp.org/www-community/attacks/csrf)] is a web security vulnerability that enables attackers to trick authenticated users into performing unintended actions on a web application. By exploiting the trust a website has in the user's browser, an attacker can craft malicious requests that appear legitimate. These actions, executed without the user's intent, can range from changing account details to initiating financial transactions, posing significant security risks to both users and web applications.
 
-<details>
+<details open>
 <summary>
 Cross-Site Request Forgery Attack
 </summary>
@@ -933,7 +933,7 @@ root@attacker:~# curl -s -X POST http://10.0.0.10/vulnerabilities/xss_s/ -d "btn
 
 [ZAP](https://www.zaproxy.org) (Zed Attack Proxy) acts as a proxy for intercepting and inspecting HTTP/HTTPS traffic between a client (browser) and a server. Functioning as a Man-in-the-Middle (MITM), ZAP allows testers to analyze requests and responses, manipulate data, and identify security vulnerabilities such as XSS, SQL injection, and CSRF.
 
-<details>
+<details open>
 <summary>
 ZAP - Zed Attack Proxy
 </summary>

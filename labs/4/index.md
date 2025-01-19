@@ -13,7 +13,7 @@ At the end of this lab session, you will be able to:
 - capture and analyze C2 traffic using tcpdump and Wireshark,
 - run a trivial DNS reflection attack and analyze generated packets.
 
-<details>
+<details open>
 <summary>What is discovery?</summary> 
 
 Techniques that adversaries use to gain knowledge about the system and internal network. These techniques help adversaries observe the environment and orient themselves before deciding how to act.\
@@ -21,7 +21,7 @@ See [MITRE ATT&CK® Matrix for Enterprise](https://attack.mitre.org/tactics/TA00
 
 </details>
 
-<details>
+<details open>
 <summary>What is lateral movement?</summary> 
 
 Techniques that adversaries that adversaries use to enter and control remote systems on a network. Following through on their primary objective often requires exploring the network to find their target and subsequently gaining access to it. Reaching their objective often involves pivoting through multiple systems and accounts to gain.\
@@ -29,7 +29,7 @@ See [MITRE ATT&CK® Matrix for Enterprise](https://attack.mitre.org/tactics/TA00
 
 </details>
 
-<details>
+<details open>
 <summary>What is collection?</summary> 
 
 Techniques that adversaries use to gather information and the sources information is collected from that are relevant to following through on the adversary's objectives.\
@@ -37,7 +37,7 @@ See [MITRE ATT&CK® Matrix for Enterprise](https://attack.mitre.org/tactics/TA00
 
 </details>
 
-<details>
+<details open>
 <summary>What is command and control?</summary> 
 
 Techniques that adversaries use to communicate with systems under their control within a victim network. Adversaries commonly attempt to mimic normal, expected traffic to avoid detection.\
@@ -45,7 +45,7 @@ See [MITRE ATT&CK® Matrix for Enterprise](https://attack.mitre.org/tactics/TA00
 
 </details>
 
-<details>
+<details open>
 <summary>What is exfiltration?</summary> 
 
 Techniques for stealing data from the target network. Once adversaries have collected data, they often package it to avoid detection while removing it.\
@@ -53,7 +53,7 @@ See [MITRE ATT&CK® Matrix for Enterprise](https://attack.mitre.org/tactics/TA00
 
 </details>
 
-<details>
+<details open>
 <summary>What is impact?</summary> 
 
 Techniques that adversaries use to disrupt availability or compromise integrity by manipulating business and operational processes.\
@@ -85,7 +85,7 @@ Use `ncrack`, `medusa`, or `hydra` at `attacker` to guess password for authentic
 
  You have been told that the username is their surname in small letters and without diacritics, and the password is the first name without diacritics and a number from 0 to 9, and the first letter is the capital. For instance, Roman Havel could have the username `havel` and password `Roman0`.
 
-<details>
+<details open>
 
 <summary>
 Solution
@@ -143,7 +143,7 @@ You might check MOTD and run LinPeas as [in the previous lab](../3/index.md#task
 
 List other users who have account at the same host.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -159,7 +159,7 @@ Solution
 
 Find out what the target user did and use this information for getting access to another host in the network. 
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -176,7 +176,7 @@ Solution
 
 Try accessing the discovered host using credentials you likely already know.
 
-<details>
+<details open>
 <summary>
 Solution and follow-up task
 </summary>
@@ -199,7 +199,7 @@ The jumphost has IP `10.0.10.22`, username and password is `ubuntu`.
 
 First, install the Metasploit framework on the jumphost. Be prepared for potential issues during the installation process, as not everything may run smoothly; you may need to troubleshoot and resolve some problems along the way.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -215,7 +215,7 @@ Generate a Meterpreter reverse shell binary using [`msfvenom`](https://docs.meta
 
 When choosing a payload, use a protocol, which is allowed for outgoing and incomming traffic from and to the target.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -232,7 +232,7 @@ Solution
 Set up a listener at the jumphost using `msfconsole`.\
 Transfer the created binary to the target host and execute it.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -263,7 +263,7 @@ Now you can command and control the host directly from the jumphost without SSH.
 
 Use Meterpreter to search for meeting minutes and archive them for exfiltration.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -280,7 +280,7 @@ Solution
 
 Use Meterpreter to download the collected data. 
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -292,7 +292,7 @@ Solution
 
 Finally, open the document and find out the estimated budget for procurement of laptops.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -327,7 +327,7 @@ Check you can send packets from `attacker` to `target`:
 
 Use [Scapy](https://scapy.net), an interactive packet manipulation library written in Python, to send a DNS request with forged source address to run a reflection attack targeting 10.0.33.50.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -345,7 +345,7 @@ Solution
 
 Run `tcpdump` at `target` to see the generated traffic.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -368,7 +368,7 @@ Run `ls` command in Meterpreter and then `download` again.
 
 Stop the packet capture and transfer the trace to `attacker` to view it using Wireshark in GUI.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -385,7 +385,7 @@ Solution
 Open the packet trace in Wireshark and inspect traffic.\
 Can you find packets carrying the downloaded files?
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>

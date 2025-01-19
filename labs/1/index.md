@@ -10,7 +10,7 @@ At the end of this lab session, you will be able to:
 - troubleshoot the sandbox and services,
 - use `nmap`, `dirb`, generative AI, and web browser for reconnaissance tasks.
 
-<details>
+<details open>
 <summary>What is reconnaissance?</summary> 
 
 Techniques that involve adversaries actively or passively gathering information that can be used to support targeting.\
@@ -26,12 +26,12 @@ See [MITRE ATT&CK® Matrix for Enterprise](https://attack.mitre.org/versions/v15
 * Virtual machines (VMs) – heavy software packages providing complete emulation of low-level hardware devices like CPU, disk and networking devices. 
 
 In this lab sessions, we will use containers orchestrated by Podman.\
-If you're familar with Docker, you might be interested in <details><summary>differences between Podman and Docker.</summary>
+If you're familar with Docker, you might be interested in <details open><summary>differences between Podman and Docker.</summary>
 ![Podman vs. Docker](figures/podman-docker.png)
 </details>
 
 Podman is already installed at PCs in A219 and in PC hall. If you're not familiar with Podman, learn
-<details>
+<details open>
 <summary>
 essential commands.
 </summary>
@@ -81,7 +81,7 @@ Two organization you would like to attack have been assigned IP ranges `10.0.33.
 
 Find IP addresses of hosts that are up.
 
-<details>
+<details open>
 <summary>
 Solution and follow-up tasks
 </summary>
@@ -115,7 +115,7 @@ nmap 10.0.33.0/24 10.0.66.0/24
 
 Find running services and their software versions at the hosts which are up.
 
-<details>
+<details open>
 <summary>
 Solution and follow-up tasks
 </summary>
@@ -139,7 +139,7 @@ nmap 10.0.33.0/24 10.0.66.0/24 -p- -sV -sS -sU -Pn
 
 What operating systems are runnning at hosts you have discovered?
 
-<details>
+<details open>
 <summary>
 Solution and follow-up tasks
 </summary>
@@ -160,7 +160,7 @@ nmap 10.0.33.0/24 10.0.66.0/24 -p- -O
 Resolve hostnames of IPs discovered by `nmap`.
 What can you infer from them?
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -179,7 +179,7 @@ Domain names may reveal other useful information, such as the role or fuction of
 
 Find out additional information about the second organization in a certifiate of its HTTPS server.
 
-<details>
+<details open>
 <summary>
 Solution and follow-up tasks
 </summary>
@@ -201,7 +201,7 @@ nmap -sC web.org2
 
 Discover (enumerate) publicly accessible directories at web servers.
 
-<details>
+<details open>
 <summary>
 Solution and follow-up tasks
 </summary>
@@ -226,7 +226,7 @@ nmap --script=http-enum web.org1 web.org2
 
 Discover publicly accessible directories at web servers using `dirb` and compare its capabilities and output to `nmap`.
 
-<details>
+<details open>
 <summary>
 Solution and follow-up tasks
 </summary>
@@ -269,7 +269,7 @@ Use your favourite browser to gain useful information from public databases or w
 
 Use Whois to find out a possible target of a spearphishing mail at Masaryk University.
 
-<details>
+<details open>
 <summary>
 Solution and follow-up tasks
 </summary>
@@ -290,7 +290,7 @@ Note: When using CLI, the Whois server may reply `Your connection limit exceeded
 
 Search [faculty website](https://www.fi.muni.cz) for potentialy interesting target servers.
 
-<details>
+<details open>
 <summary>
 Solution and follow-up tasks
 </summary>
@@ -302,7 +302,7 @@ Solution and follow-up tasks
 * The names and description of services are publicly available and allow attackers speed up the reconnaissance.
 * Search for username patterns useful when creating an dictionary for authentication attack.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>

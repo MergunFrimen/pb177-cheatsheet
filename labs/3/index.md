@@ -12,7 +12,7 @@ At the end of this lab session, you will be able to:
 - steal the superuser password from the target, 
 - detect the particular exploit and mitigate the vulnerability and other malicious actions after the privilege escalation.
 
-<details>
+<details open>
 <summary>What is persistence?</summary> 
 
 Techniques that adversaries use to keep access to systems across restarts, changed credentials, and other interruptions that could cut off their access.\
@@ -20,7 +20,7 @@ See [MITRE ATT&CK® Matrix for Enterprise](https://attack.mitre.org/tactics/TA00
 
 </details>
 
-<details>
+<details open>
 <summary>What is privilege escalation?</summary> 
 
 Techniques that adversaries use to gain higher-level permissions on a system or network.\
@@ -28,7 +28,7 @@ See [MITRE ATT&CK® Matrix for Enterprise](https://attack.mitre.org/tactics/TA00
 
 </details>
 
-<details>
+<details open>
 <summary>What is defense evasion?</summary> 
 
 Techniques that adversaries use to avoid detection throughout their compromise.\
@@ -36,7 +36,7 @@ See [MITRE ATT&CK® Matrix for Enterprise](https://attack.mitre.org/tactics/TA00
 
 </details>
 
-<details>
+<details open>
 <summary>What is credential access?</summary> 
 
 Techniques for stealing credentials like account names and passwords.\
@@ -67,7 +67,7 @@ Hints
   * The password is a meaningful word consisting of 4 English small letters. Filter out all other passwords and use a shortened wordlist.
   * If the password is not guessed within a minute, terminate the tool and use another filter for shortening the wordlist.
 
-<details>
+<details open>
 
 <summary>
 Solution
@@ -89,7 +89,7 @@ Once you are logged in to the target via SSH, escalate privileges of the user `t
 
 Start with exploring the system.
 
-<details>
+<details open>
 <summary>Exploring</summary>
 
 Read the [message of the day](https://en.wikipedia.org/wiki/Message_of_the_day) (MOTD) thoroughly.
@@ -100,7 +100,7 @@ Is there any other information attracting your attention?
 
 All this information can be gathered manually from configuration files and utilities, however we will try an automated tool, [LinPEAS](https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS). Find a way to run it on the target machine. While the tools output is rather long, it is nicely structured so you can smoothly find what you are looking for.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -115,7 +115,7 @@ Solution
 
 Next, we need to find a target to exploit. Focus on the _"Files with interesting permissions"_ chapter of the **LinPEAS** output.
 
-<details>
+<details open>
 <summary>Finding a vulnerability</summary>
 
 The output of LinPEAS clearly states that you should `check if the sudo version is vulnerable`. This is further empowered by the information in the MOTD. 
@@ -124,7 +124,7 @@ Search for known vulnerabilities of `sudo` matching the version used at the targ
 
 Which known vulnerability might apply to our target? 
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -139,7 +139,7 @@ Solution
 
 Study the selected vulnerability and exploit it at the target to edit `/etc/passwd` file ([man pages](https://man7.org/linux/man-pages/man5/passwd.5.html)), which can be edited only by the superuser (root).
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -160,7 +160,7 @@ Run the exploit again and add a new superuser account `admin` to `/etc/passwd`.
 
 Hint: use `openssl` or [online Crypt() Hashing Function](https://www.dcode.fr/crypt-hashing-function) to generate a hash of a new password.
 
-<details>
+<details open>
 <summary>
 Solution and follow-up task
 </summary>
@@ -175,7 +175,7 @@ Solution and follow-up task
 
 Try to connect to the target using a newly created account via SSH from `attacker`. Why does it fail?
 
-<details>
+<details open>
 <summary>
 Solution and follow-up tasks
 </summary>
@@ -196,7 +196,7 @@ Solution and follow-up tasks
 
 Strengthen your persistence at the target and add your SSH public key to `~/.ssh/authorized_keys` of user `test`.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -216,7 +216,7 @@ It might be helpful once other credentials are changed, or when authenticating t
 
 > There are two famous tools for cracking passwords, however the hashing algorithm used is not supported by [`hashcat`](https://hashcat.net/hashcat/).
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -236,7 +236,7 @@ Finally, set a scheduled task, which will start every minute a reverse shell usi
 Check the shell by running any command from `attacker`.
 You can use [these](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md) materials to learn more about reverse shells.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -263,7 +263,7 @@ View command history files of all users you have been logged in (`test`, `admin`
 Set the history control environment variable so that commands that start with a space will not be logged.\
 Check the settings are applied correctly by typing `echo 1` and then ` echo 2`. What is this good for?
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -288,7 +288,7 @@ All these entries are crucial for intrusion detection and post-mortem investigat
 
 Do not delete any log files or lines in the files. We will need them for further tasks.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -307,7 +307,7 @@ Now work at `server` and detect the attack and secure the system.
 
 Install and setup [Fail2Ban](https://github.com/fail2ban/fail2ban/wiki) to detect and prevent brute-force attacks at SSH.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -322,7 +322,7 @@ Solution
 Run the brute-force attack from `attacker` again and check the status of the `sshd` jail at `server`.\
 List `iptables` rules at `server` and find a rule implementing the ban.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
@@ -342,7 +342,7 @@ Solution
 
 Use `grep` to search for the execution of the `sudo` exploit.
 
-<details>
+<details open>
 <summary>
 Solution
 </summary>
