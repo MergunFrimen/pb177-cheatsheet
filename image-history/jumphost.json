@@ -1,0 +1,133 @@
+[
+    {
+        "id": "925f1753fef770a56a532b715a49449dcb03e25c86afc171dbbf46816edc8bc2",
+        "created": "2024-11-05T07:26:14.974142694Z",
+        "CreatedBy": "CMD [\"/setup.sh\"]",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/jumphost/jumphost:main"
+        ],
+        "size": 0,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-05T07:26:14Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-05T07:26:14.974142694Z",
+        "CreatedBy": "ENTRYPOINT [\"/bin/bash\"]",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/jumphost/jumphost:main"
+        ],
+        "size": 0,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-05T07:26:14Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-05T07:26:14.974142694Z",
+        "CreatedBy": "WORKDIR /home/ubuntu",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/jumphost/jumphost:main"
+        ],
+        "size": 1024,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-05T07:26:14Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-05T07:26:14.673302719Z",
+        "CreatedBy": "RUN /bin/sh -c chmod u+x /setup.sh # buildkit",
+        "size": 2048,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-05T07:26:14Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-05T07:26:14.974142694Z",
+        "CreatedBy": "RUN /bin/sh -c usermod -aG sudo ubuntu # buildkit",
+        "size": 1024,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-05T07:26:14Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-05T07:26:13.59771087Z",
+        "CreatedBy": "RUN /bin/sh -c echo 'ubuntu:ubuntu' | chpasswd # buildkit",
+        "size": 3072,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-05T07:26:13Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-05T07:26:13.065861967Z",
+        "CreatedBy": "COPY ./setup.sh /setup.sh # buildkit",
+        "size": 2048,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-05T07:26:13Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-05T07:26:12.59158423Z",
+        "CreatedBy": "RUN /bin/sh -c apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install curl wget vim iptables openssh-server cron rsyslog git sudo netcat-traditional -y # buildkit",
+        "size": 310978048,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-05T07:26:12Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-01T15:31:19.400413005Z",
+        "CreatedBy": "RUN /bin/sh -c echo 'tzdata tzdata/Zones/Europe select Prague' | debconf-set-selections # buildkit",
+        "size": 970752,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-01T15:31:19Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-01T15:31:17.620718616Z",
+        "CreatedBy": "RUN /bin/sh -c echo 'tzdata tzdata/Areas select Europe' | debconf-set-selections # buildkit",
+        "size": 969728,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-01T15:31:17Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-11T03:48:04.086892655Z",
+        "CreatedBy": "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]",
+        "size": 0,
+        "Created": "2024-10-11T03:48:04Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-11T03:48:03.777394067Z",
+        "CreatedBy": "/bin/sh -c #(nop) ADD file:34dc4f3ab7a694ecde47ff7a610be18591834c45f1d7251813267798412604e5 in / ",
+        "size": 80622592,
+        "Created": "2024-10-11T03:48:03Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-11T03:48:01.642491381Z",
+        "CreatedBy": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.version=24.04",
+        "size": 0,
+        "Created": "2024-10-11T03:48:01Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-11T03:48:01.607507065Z",
+        "CreatedBy": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.ref.name=ubuntu",
+        "size": 0,
+        "Created": "2024-10-11T03:48:01Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-11T03:48:01.571862048Z",
+        "CreatedBy": "/bin/sh -c #(nop)  ARG LAUNCHPAD_BUILD_ARCH",
+        "size": 0,
+        "Created": "2024-10-11T03:48:01Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-11T03:48:01.529767151Z",
+        "CreatedBy": "/bin/sh -c #(nop)  ARG RELEASE",
+        "size": 0,
+        "Created": "2024-10-11T03:48:01Z"
+    }
+]

@@ -1,0 +1,106 @@
+[
+    {
+        "id": "f91966b3282303c7d362e37d3e95188aa2029859b8db7e9f68d40895ab60ed72",
+        "created": "2024-09-09T09:50:18.107317699Z",
+        "CreatedBy": "CMD [\"/setup.sh\"]",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/dns/dns:main"
+        ],
+        "size": 0,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-09T09:50:18Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-09T09:50:18.107317699Z",
+        "CreatedBy": "WORKDIR /root",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/dns/dns:main"
+        ],
+        "size": 1024,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-09T09:50:18Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-09T09:50:17.355501091Z",
+        "CreatedBy": "RUN /bin/sh -c chmod u+x /setup.sh # buildkit",
+        "size": 2048,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-09T09:50:17Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-09T09:50:16.682900192Z",
+        "CreatedBy": "COPY ./dns/setup.sh /setup.sh # buildkit",
+        "size": 2048,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-09T09:50:16Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-09T09:50:15.889288372Z",
+        "CreatedBy": "COPY ./dns/dnsmasq.conf /etc/dnsmasq.conf # buildkit",
+        "size": 2560,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-09T09:50:15Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-09T09:50:14.713785799Z",
+        "CreatedBy": "RUN /bin/sh -c apt-get update && apt-get install dnsmasq tcpdump -y # buildkit",
+        "size": 7975424,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-09T09:50:14Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-09T09:49:52.651239408Z",
+        "CreatedBy": "RUN /bin/sh -c apt-get update && apt-get install curl vim -y # buildkit",
+        "size": 128791040,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-09T09:49:52Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-08-01T14:23:55.913663537Z",
+        "CreatedBy": "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]",
+        "size": 0,
+        "Created": "2024-08-01T14:23:55Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-08-01T14:23:55.660036165Z",
+        "CreatedBy": "/bin/sh -c #(nop) ADD file:c2e78eb585ec4e503f14c4ea98f4962c998f5eb075749507953f85387742694b in / ",
+        "size": 80559616,
+        "Created": "2024-08-01T14:23:55Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-08-01T14:23:53.785081651Z",
+        "CreatedBy": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.version=24.04",
+        "size": 0,
+        "Created": "2024-08-01T14:23:53Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-08-01T14:23:53.750942123Z",
+        "CreatedBy": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.ref.name=ubuntu",
+        "size": 0,
+        "Created": "2024-08-01T14:23:53Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-08-01T14:23:53.721607185Z",
+        "CreatedBy": "/bin/sh -c #(nop)  ARG LAUNCHPAD_BUILD_ARCH",
+        "size": 0,
+        "Created": "2024-08-01T14:23:53Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-08-01T14:23:53.686453979Z",
+        "CreatedBy": "/bin/sh -c #(nop)  ARG RELEASE",
+        "size": 0,
+        "Created": "2024-08-01T14:23:53Z"
+    }
+]

@@ -1,0 +1,109 @@
+[
+    {
+        "id": "31c5259317f39839021559bdbc9405b189987feb40fde92d56aad0ae5643a107",
+        "created": "2024-09-09T11:09:25.233616779Z",
+        "CreatedBy": "CMD [\"/setup.sh\"]",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/samba/samba:main"
+        ],
+        "size": 0,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-09T11:09:25Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-09T11:09:25.233616779Z",
+        "CreatedBy": "ENTRYPOINT [\"/bin/bash\"]",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/samba/samba:main"
+        ],
+        "size": 0,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-09T11:09:25Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-09T11:09:25.233616779Z",
+        "CreatedBy": "WORKDIR /root",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/samba/samba:main"
+        ],
+        "size": 1024,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-09T11:09:25Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-09T11:09:25.030830122Z",
+        "CreatedBy": "RUN /bin/sh -c chmod u+x /setup.sh # buildkit",
+        "size": 2048,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-09T11:09:25Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-09T11:09:24.61172427Z",
+        "CreatedBy": "COPY ./samba/setup.sh /setup.sh # buildkit",
+        "size": 2048,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-09T11:09:24Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-09T11:09:23.991023424Z",
+        "CreatedBy": "RUN /bin/sh -c DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y samba openssh-server # buildkit",
+        "size": 245391872,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-09T11:09:23Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-09T11:08:03.414054201Z",
+        "CreatedBy": "RUN /bin/sh -c apt-get update && apt-get install curl vim -y # buildkit",
+        "size": 128791040,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-09T11:08:03Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-08-01T14:23:55.913663537Z",
+        "CreatedBy": "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]",
+        "size": 0,
+        "Created": "2024-08-01T14:23:55Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-08-01T14:23:55.660036165Z",
+        "CreatedBy": "/bin/sh -c #(nop) ADD file:c2e78eb585ec4e503f14c4ea98f4962c998f5eb075749507953f85387742694b in / ",
+        "size": 80559616,
+        "Created": "2024-08-01T14:23:55Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-08-01T14:23:53.785081651Z",
+        "CreatedBy": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.version=24.04",
+        "size": 0,
+        "Created": "2024-08-01T14:23:53Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-08-01T14:23:53.750942123Z",
+        "CreatedBy": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.ref.name=ubuntu",
+        "size": 0,
+        "Created": "2024-08-01T14:23:53Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-08-01T14:23:53.721607185Z",
+        "CreatedBy": "/bin/sh -c #(nop)  ARG LAUNCHPAD_BUILD_ARCH",
+        "size": 0,
+        "Created": "2024-08-01T14:23:53Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-08-01T14:23:53.686453979Z",
+        "CreatedBy": "/bin/sh -c #(nop)  ARG RELEASE",
+        "size": 0,
+        "Created": "2024-08-01T14:23:53Z"
+    }
+]

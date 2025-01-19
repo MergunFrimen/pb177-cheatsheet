@@ -1,0 +1,141 @@
+[
+    {
+        "id": "18cc3062a83366ded68e993edabcb4e66d47465ceead299a69d1390a4a1c441c",
+        "created": "2024-10-21T15:26:56.59149739Z",
+        "CreatedBy": "CMD [\"/setup.sh\"]",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/server3/server3:main"
+        ],
+        "size": 0,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-10-21T15:26:56Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-21T15:26:56.59149739Z",
+        "CreatedBy": "ENTRYPOINT [\"/bin/bash\"]",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/server3/server3:main"
+        ],
+        "size": 0,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-10-21T15:26:56Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-21T15:26:56.59149739Z",
+        "CreatedBy": "WORKDIR /home/test",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/server3/server3:main"
+        ],
+        "size": 1024,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-10-21T15:26:56Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-21T15:26:55.923003777Z",
+        "CreatedBy": "COPY ./motd /etc/motd # buildkit",
+        "size": 2560,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-10-21T15:26:55Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-21T15:26:54.489231406Z",
+        "CreatedBy": "RUN /bin/sh -c chmod u+x /setup.sh # buildkit",
+        "size": 2048,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-10-21T15:26:54Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-21T15:26:51.097570235Z",
+        "CreatedBy": "RUN /bin/sh -c echo 'test ALL=(ALL:ALL) sudoedit /etc/resolv.conf' | tee -a /etc/sudoers # buildkit",
+        "size": 4096,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-10-21T15:26:51Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-21T15:26:47.635879678Z",
+        "CreatedBy": "RUN /bin/sh -c echo 'root:booster' | chpasswd # buildkit",
+        "size": 3072,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-10-21T15:26:47Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-21T15:26:45.460201611Z",
+        "CreatedBy": "RUN /bin/sh -c echo 'test:adam' | chpasswd # buildkit",
+        "size": 3072,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-10-21T15:26:45Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-18T15:42:16.824844272Z",
+        "CreatedBy": "RUN /bin/sh -c useradd -s /bin/bash -m test # buildkit",
+        "size": 348672,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-10-18T15:42:16Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-18T15:42:15.227270706Z",
+        "CreatedBy": "COPY ./setup.sh /setup.sh # buildkit",
+        "size": 2048,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-10-18T15:42:15Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-10-18T13:25:59.568883362Z",
+        "CreatedBy": "RUN /bin/sh -c apt-get update && apt-get install curl wget vim iptables openssh-server sudo=1.9.9-1ubuntu2 cron rsyslog -y # buildkit",
+        "size": 226957824,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-10-18T13:25:59Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-11T16:25:18.112480611Z",
+        "CreatedBy": "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]",
+        "size": 0,
+        "Created": "2024-09-11T16:25:18Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-11T16:25:17.895714864Z",
+        "CreatedBy": "/bin/sh -c #(nop) ADD file:ebe009f86035c175ba244badd298a2582914415cf62783d510eab3a311a5d4e1 in / ",
+        "size": 80413184,
+        "Created": "2024-09-11T16:25:17Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-11T16:25:16.145319811Z",
+        "CreatedBy": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.version=22.04",
+        "size": 0,
+        "Created": "2024-09-11T16:25:16Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-11T16:25:16.12828917Z",
+        "CreatedBy": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.ref.name=ubuntu",
+        "size": 0,
+        "Created": "2024-09-11T16:25:16Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-11T16:25:16.110134186Z",
+        "CreatedBy": "/bin/sh -c #(nop)  ARG LAUNCHPAD_BUILD_ARCH",
+        "size": 0,
+        "Created": "2024-09-11T16:25:16Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-11T16:25:16.091322237Z",
+        "CreatedBy": "/bin/sh -c #(nop)  ARG RELEASE",
+        "size": 0,
+        "Created": "2024-09-11T16:25:16Z"
+    }
+]

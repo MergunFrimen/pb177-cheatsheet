@@ -1,0 +1,86 @@
+[
+    {
+        "id": "c2778ca652cbaa9c9c2adb7bdb8ceb2c9fbe4ff56af1d1c34b1cf9f0efebed41",
+        "created": "2024-11-04T16:03:43.337201794Z",
+        "CreatedBy": "CMD [\"/bin/sh\" \"-c\" \"/usr/sbin/sshd -D -p $SSH_PORT\"]",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/ssh/ssh:main"
+        ],
+        "size": 0,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-04T16:03:43Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-04T16:03:43.337201794Z",
+        "CreatedBy": "RUN /bin/sh -c echo \"Banner /etc/banner\" >> /etc/ssh/sshd_config # buildkit",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/ssh/ssh:main"
+        ],
+        "size": 6144,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-04T16:03:43Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-04T16:03:36.90498477Z",
+        "CreatedBy": "RUN /bin/sh -c bash /root/setup.sh && rm /root/setup.sh # buildkit",
+        "size": 5373440,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-04T16:03:36Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-04T16:03:23.634120006Z",
+        "CreatedBy": "COPY ./ssh/banner /etc/banner # buildkit",
+        "size": 2560,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-04T16:03:23Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-04T16:03:16.255930158Z",
+        "CreatedBy": "COPY ./ssh/users.csv /root/users.csv # buildkit",
+        "size": 2560,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-04T16:03:16Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-04T16:03:10.644947799Z",
+        "CreatedBy": "COPY ./ssh/setup.sh /root/setup.sh # buildkit",
+        "size": 2560,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-04T16:03:10Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-04T16:03:04.335972375Z",
+        "CreatedBy": "RUN /bin/sh -c apk add bash tcpdump # buildkit",
+        "size": 6844928,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-04T16:03:04Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-11-04T16:03:04.335972375Z",
+        "CreatedBy": "ENV SSH_PORT=22",
+        "size": 0,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-11-04T16:03:04Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2021-08-27T17:19:45.758611523Z",
+        "CreatedBy": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
+        "size": 0,
+        "Created": "2021-08-27T17:19:45Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2021-08-27T17:19:45.553092363Z",
+        "CreatedBy": "/bin/sh -c #(nop) ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / ",
+        "size": 5865472,
+        "Created": "2021-08-27T17:19:45Z"
+    }
+]

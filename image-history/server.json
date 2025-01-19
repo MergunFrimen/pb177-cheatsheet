@@ -1,0 +1,113 @@
+[
+    {
+        "id": "43fdee24c534c8bf4ff1071e21d4e41f9b8487187dfe1b5a9a9ad37adbae3d8e",
+        "created": "2024-09-23T14:18:30.084740637Z",
+        "CreatedBy": "CMD [\"/setup.sh\"]",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/server/server:main"
+        ],
+        "size": 0,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-23T14:18:30Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-23T14:18:30.084740637Z",
+        "CreatedBy": "ENTRYPOINT [\"/bin/bash\"]",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/server/server:main"
+        ],
+        "size": 0,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-23T14:18:30Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-23T14:18:30.084740637Z",
+        "CreatedBy": "WORKDIR /root",
+        "tags": [
+            "gitlab.fi.muni.cz:5050/cybersec/infra/images/server/server:main"
+        ],
+        "size": 1024,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-23T14:18:30Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-23T14:18:29.097154331Z",
+        "CreatedBy": "RUN /bin/sh -c chmod u+x /setup.sh # buildkit",
+        "size": 2048,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-23T14:18:29Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-23T14:18:28.584787334Z",
+        "CreatedBy": "COPY ./webmin/setup.sh /setup.sh # buildkit",
+        "size": 2048,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-23T14:18:28Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-23T14:18:27.910141807Z",
+        "CreatedBy": "RUN /bin/sh -c sed -i 's/passwd_mode=0/passwd_mode=2/' /etc/webmin/miniserv.conf # buildkit",
+        "size": 3584,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-23T14:18:27Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-23T14:18:26.391043264Z",
+        "CreatedBy": "RUN /bin/sh -c printf \"\\n\\n\\n10000\\nnotadmin\\nkitty\\nkitty\\nn\\n\"| /tmp/webmin-1.920/setup.sh /usr/local/webmin # buildkit",
+        "size": 106515968,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-23T14:18:26Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-23T14:18:08.073667786Z",
+        "CreatedBy": "RUN /bin/sh -c apt-get install libtime-local-perl -y # buildkit",
+        "size": 47708160,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-23T14:18:08Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-23T14:17:59.536506171Z",
+        "CreatedBy": "RUN /bin/sh -c tar xvzf /tmp/webmin-1.920.tar.gz -C /tmp && cd /tmp/webmin-1.920 && chmod u+x setup.sh # buildkit",
+        "size": 106172928,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-23T14:17:59Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-23T14:17:47.984374392Z",
+        "CreatedBy": "RUN /bin/sh -c wget https://sourceforge.net/projects/webadmin/files/webmin/1.920/webmin-1.920.tar.gz/download -O /tmp/webmin-1.920.tar.gz # buildkit",
+        "size": 30864896,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-23T14:17:47Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-09-23T14:16:39.912955289Z",
+        "CreatedBy": "RUN /bin/sh -c apt-get update && apt-get install curl wget vim iptables -y # buildkit",
+        "size": 75463168,
+        "comment": "buildkit.dockerfile.v0",
+        "Created": "2024-09-23T14:16:39Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-06-13T01:21:29.146379431Z",
+        "CreatedBy": "/bin/sh -c #(nop)  CMD [\"bash\"]",
+        "size": 0,
+        "Created": "2024-06-13T01:21:29Z"
+    },
+    {
+        "id": "<missing>",
+        "created": "2024-06-13T01:21:28.635932821Z",
+        "CreatedBy": "/bin/sh -c #(nop) ADD file:82f06126089fd0ca482c29baeb90ef37ac3a9f5f6a0f2f5c968a605846627d47 in / ",
+        "size": 120063488,
+        "Created": "2024-06-13T01:21:28Z"
+    }
+]
